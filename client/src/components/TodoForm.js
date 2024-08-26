@@ -17,6 +17,7 @@ const TodoForm = ({ addTodo }) => {
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a new task"
         className='border-2 border-lime-500 rounded-lg p-2'
+        required
       />
       <button type="submit" className='m-4 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700'>Add</button>
     </form>
