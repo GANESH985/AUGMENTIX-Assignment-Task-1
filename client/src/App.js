@@ -8,25 +8,25 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/todos')
+    axios.get('https://augmentix-assignment-task-1.onrender.com/api/todos')
       .then(response => setTodos(response.data))
       .catch(error => console.error(error))
   }, [])
 
   const addTodo = (title) => {
-    axios.post('/api/todos', { title })
+    axios.post('https://augmentix-assignment-task-1.onrender.com/api/todos', { title })
       .then(response => setTodos([...todos, response.data]))
       .catch(error => console.error(error))
   }
 
   const updateTodo = (id, updatedTodo) => {
-    axios.put(`/api/todos/${id}`, updatedTodo)
+    axios.put(`https://augmentix-assignment-task-1.onrender.com/api/todos/${id}`, updatedTodo)
       .then(response => setTodos(todos.map(todo => todo._id === id ? response.data : todo)))
       .catch(error => console.error(error));
   }
 
   const deleteTodo = (id) => {
-    axios.delete(`/api/todos/${id}`)
+    axios.delete(`https://augmentix-assignment-task-1.onrender.com/api/todos/${id}`)
       .then(() => setTodos(todos.filter(todo => todo._id !== id)))
       .catch(error => console.error(error));
   }
